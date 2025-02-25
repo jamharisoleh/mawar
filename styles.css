@@ -1,0 +1,115 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f8ff;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.flower-container {
+    position: relative;
+    width: 150px;
+    height: 300px;
+}
+
+.flower {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 0;
+    left: 25px;
+    animation: bloom 3s infinite alternate;
+}
+
+.petals {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.petal {
+    position: absolute;
+    width: 50px;
+    height: 100px;
+    background-color: #ff0000; /* Warna merah */
+    border-radius: 50%;
+    transform-origin: bottom center;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.petal:nth-child(1) { transform: rotate(0deg); }
+.petal:nth-child(2) { transform: rotate(60deg); }
+.petal:nth-child(3) { transform: rotate(120deg); }
+.petal:nth-child(4) { transform: rotate(180deg); }
+.petal:nth-child(5) { transform: rotate(240deg); }
+.petal:nth-child(6) { transform: rotate(300deg); }
+
+.center {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #ffcc00; /* Warna kuning untuk tengah bunga */
+    border-radius: 50%;
+    top: 35px;
+    left: 35px;
+    z-index: 2;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.stem {
+    width: 10px;
+    height: 200px;
+    background-color: green;
+    position: absolute;
+    top: 100px;
+    left: 70px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.leaf {
+    width: 40px;
+    height: 20px;
+    background-color: green;
+    position: absolute;
+    top: 180px;
+    left: 50px;
+    border-radius: 50%;
+    transform: rotate(-45deg);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.leaf.right {
+    left: 80px;
+    transform: rotate(45deg);
+}
+
+.message {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    color: #ff0000;
+    font-weight: bold;
+    animation: float 2s infinite alternate;
+}
+
+@keyframes bloom {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translate(-50%, 0);
+    }
+    100% {
+        transform: translate(-50%, -10px);
+    }
+}
